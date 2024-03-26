@@ -1,3 +1,4 @@
+import com.example.Feline;
 import com.example.Lion;
 import com.example.Predator;
 import org.junit.Assert;
@@ -15,27 +16,22 @@ import static org.junit.Assert.assertEquals;
 public class LionTest {
 
     @Mock
-    private Predator predator;
+    private Feline feline;
     private Lion lion;
     @Before
     public void setUp() throws Exception {
-        lion = new Lion("Самец", predator);
-    }
-
-    @Test
-    public void testGetSound() {
-        assertEquals("Ррррр", lion.getSound());
+        lion = new Lion("Самец", feline);
     }
 
     @Test
     public void testGetFood() throws Exception {
         List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
-        Mockito.when(predator.eatMeat()).thenReturn(expectedFood);
+        Mockito.when(feline.getFood("Хищник")).thenReturn(expectedFood);
 
         List<String> actualFood = lion.getFood();
 
         Assert.assertEquals(expectedFood, actualFood);
-        Mockito.verify(predator, Mockito.times(1)).eatMeat();
+        Mockito.verify(feline, Mockito.times(1)).getFood("Хищник");
     }
 
     @Test

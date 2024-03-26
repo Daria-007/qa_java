@@ -7,10 +7,13 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 
+
 public class CatTest {
     @Spy
-    private Feline feline;
     private Cat cat;
+
+    @Mock
+    private Feline feline;
 
     @Before
     public void setUp() {
