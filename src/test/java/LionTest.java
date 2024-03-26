@@ -1,6 +1,5 @@
 import com.example.Feline;
 import com.example.Lion;
-import com.example.Predator;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,11 +15,12 @@ import static org.junit.Assert.assertEquals;
 public class LionTest {
 
     @Mock
-    private Feline feline;
+    public Feline feline;
     private Lion lion;
     @Before
     public void setUp() throws Exception {
         lion = new Lion("Самец", feline);
+        Mockito.when(feline.getKittens()).thenReturn(2); // Установка ожидаемого значения для метода getKittens()
     }
 
     @Test

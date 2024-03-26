@@ -5,6 +5,9 @@ import java.util.List;
 public class Cat {
 
     Predator predator;
+    public Cat() {
+        // Пустой конструктор без аргументов
+    }
 
     public Cat(Predator predator) {
         this.predator = predator;

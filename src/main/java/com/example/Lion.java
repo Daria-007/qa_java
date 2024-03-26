@@ -5,7 +5,7 @@ import java.util.List;
 public class Lion {
 
     private boolean hasMane;
-    private Feline feline;
+    public Feline feline;
 
     public Lion(String sex, Feline feline) throws Exception {
         this.feline = feline;
